@@ -8,55 +8,55 @@
                         <?php echo translate('latest_products'); ?>
                     </span>
                 </h4>
-                <!-- <?php
-                        $latest = $this->crud_model->product_list_set('latest', 3);
-                        foreach ($latest as $row) {
-                        ?>
-                <div class="product-box-sm" style="width:100%">
-                    <div class="row">
-                        <div class="col-md-4" style="max-height:110px; overflow:hidden;">
-                            <img class="media-object img-responsive pull-left image_delay" style="width:100%;" src="<?php echo img_loading(); ?>" data-src="<?php echo $this->crud_model->file_view('product', $row['product_id'], '100', '', 'thumb', 'src', 'multi', 'one'); ?>" alt="">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="inro-section">
-                                <h4 class="title">
-                                    <a href="<?php echo $this->crud_model->product_link($row['product_id']); ?>">
-                                    <?php echo $row['title']; ?>
-                                    </a>
-                                </h4>
-                                <p>
-                                    <a href="<?php echo base_url(); ?>home/category/<?php echo $row['category']; ?>">
-                                    <?php echo $this->crud_model->get_type_name_by_id('category', $row['category'], 'category_name'); ?>
-                                    </a>
-                                </p>
+                <?php
+                $latest = $this->crud_model->product_list_set('latest', 3);
+                foreach ($latest as $row) {
+                ?>
+                    <div class="product-box-sm" style="width:100%">
+                        <div class="row">
+                            <div class="col-md-4" style="max-height:110px; overflow:hidden;">
+                                <img class="media-object img-responsive pull-left image_delay" style="width:100%;" src="<?php echo img_loading(); ?>" data-src="<?php echo $this->crud_model->file_view('product', $row['product_id'], '100', '', 'thumb', 'src', 'multi', 'one'); ?>" alt="">
                             </div>
-                            <?php $rating = $this->crud_model->rating($row['product_id']); ?>
-                            <div class="rateit" data-rateit-value="<?= $rating ?>" data-rateit-ispreset="true" data-rateit-readonly="true" ></div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="price pull-left">
-                                        <ins>
-                                            <?php echo currency($this->crud_model->get_product_price($row['product_id'])); ?>
-                                        </ins>
-                                    </div>
+                            <div class="col-md-8">
+                                <div class="inro-section">
+                                    <h4 class="title">
+                                        <a href="<?php echo $this->crud_model->product_link($row['product_id']); ?>">
+                                            <?php echo $row['title']; ?>
+                                        </a>
+                                    </h4>
+                                    <p>
+                                        <a href="<?php echo base_url(); ?>home/category/<?php echo $row['category']; ?>">
+                                            <?php echo $this->crud_model->get_type_name_by_id('category', $row['category'], 'category_name'); ?>
+                                        </a>
+                                    </p>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="buttons">
-                                        <span class="btn-icon wishlist pull-right" onclick="to_wishlist(<?php echo $row['product_id']; ?>,event)" data-original-title="<?php echo translate('add_to_wishlist'); ?>" data-toggle="tooltip" data-placement="left">
-                                            <i class="fa fa-heart"></i>
-                                        </span>
-                                        <span class="btn-icon pull-right" onclick="to_cart(<?php echo $row['product_id']; ?>,event)" data-original-title="<?php echo translate('add_to_cart'); ?>" data-toggle="tooltip" data-placement="left">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </span>
+                                <?php $rating = $this->crud_model->rating($row['product_id']); ?>
+                                <div class="rateit" data-rateit-value="<?= $rating ?>" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="price pull-left">
+                                            <ins>
+                                                <?php echo currency($this->crud_model->get_product_price($row['product_id'])); ?>
+                                            </ins>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="buttons">
+                                            <span class="btn-icon wishlist pull-right" onclick="to_wishlist(<?php echo $row['product_id']; ?>,event)" data-original-title="<?php echo translate('add_to_wishlist'); ?>" data-toggle="tooltip" data-placement="left">
+                                                <i class="fa fa-heart"></i>
+                                            </span>
+                                            <span class="btn-icon pull-right" onclick="to_cart(<?php echo $row['product_id']; ?>,event)" data-original-title="<?php echo translate('add_to_cart'); ?>" data-toggle="tooltip" data-placement="left">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <?php
-                        }
-                ?> -->
+                }
+                ?>
             </div>
             <div class="col-md-4 product-list">
                 <h4 class="special-products-title">

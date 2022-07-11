@@ -16,7 +16,7 @@
                 ));
             ?>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <select class="selectpicker" data-live-search="true" name="category" data-toggle="tooltip" title="<?php echo translate('select');?>" onChange="set_search_by_cat(this);">
                             <option value="0"  data-cat="0" 
                                 data-min="<?php echo round($this->crud_model->get_range_lvl('product_id !=', '0', "min")); ?>" 
@@ -44,7 +44,7 @@
                             ?>
                         </select>
                     </div>
-                    <div class="col-md-4 search_sub">
+                    <div class="col-md-3 search_sub">
                         <select class="selectpicker header-search-select" data-live-search="true" name="sub_category" data-toggle="tooltip" title="<?php echo translate('select');?>">
                             <option value="0" ><?php echo translate('all_sub_categories');?></option>
                         </select>
@@ -52,7 +52,7 @@
 					<?php 
                     	if ($this->crud_model->get_type_name_by_id('general_settings','68','value') == 'ok') {
                     ?>
-                    <div class="col-md-4 search_brands">
+                    <div class="col-md-3 search_brands">
                         <select class="selectpicker header-search-select" data-live-search="true" name="brand" data-toggle="tooltip" title="<?php echo translate('select');?>">
                             <option value="0" ><?php echo translate('all_brands');?></option>
                         </select>
@@ -60,9 +60,7 @@
                     <?php
 						}
 					?>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="widget widget-filter-price" style="padding: 2px 20px;height: 40px;">                
                             <div id="slider-range"></div>
                             <input type="text" style="position: absolute; width:75%; text-align:center;margin-top: -30px;border: none;" id="amount" disabled />
@@ -70,10 +68,14 @@
                             <input type="hidden" id="univ_max" value="<?php echo $this->crud_model->get_range_lvl('product_id !=', '', "max"); ?>">
                         </div>
                     </div>
-                    <div class="col-md-4 ">
-                    <input class="form-control" type="text" name="query" placeholder="<?php echo translate('what_are_you_looking_for'); ?>?">
+                </div>
+
+
+                <div class="row" style="margin-left:50px;">
+                    <div class="col-md-3">
+                        <input class="form-control" type="text" name="query" placeholder="<?php echo translate('what_are_you_looking_for'); ?>?">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <button class="btn btn-theme btn-block" style="padding:10px 20px;">
                             <span class="fa fa-search" aria-hidden="true"></span>
                             <span class=""><?php echo translate('search'); ?></span>
